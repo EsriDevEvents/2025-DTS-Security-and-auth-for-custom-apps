@@ -1,0 +1,18 @@
+{
+  "name": "createapikey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "createAnAPIKey.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@esri/arcgis-rest-developer-credentials": "latest",
+    "@esri/arcgis-rest-portal": "^4.5.0",
+    "@esri/arcgis-rest-request": "^4.0.0",
+    "dotenv": "^16.4.7"
+  }
+}
