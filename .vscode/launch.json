@@ -7,9 +7,17 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "CreateAnAPIKey",
+      "name": "CreateAPIKey",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/API Key authentication/create/createAnAPIKey.js",
+      "program": "${workspaceFolder}/API Key authentication/create/index.js",
+      "envFile": "${workspaceFolder}/API Key authentication/create/.env"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "RotateAPIKey",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/API Key authentication/create/index.js",
       "envFile": "${workspaceFolder}/API Key authentication/create/.env"
     }
   ]
