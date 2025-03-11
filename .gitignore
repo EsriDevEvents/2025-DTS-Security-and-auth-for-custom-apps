@@ -1,3 +1,5 @@
 env.js
 .env
 node_modules
+*.pptx
+images
