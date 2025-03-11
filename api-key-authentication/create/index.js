@@ -1,6 +1,6 @@
 import { createApiKey } from "@esri/arcgis-rest-developer-credentials"
 import { ArcGISIdentityManager } from "@esri/arcgis-rest-request"
-import { moveItem, getSelf } from "@esri/arcgis-rest-portal"
+import { moveItem, getSelf, getItem } from "@esri/arcgis-rest-portal"
 
 // log in
 const authSession = await ArcGISIdentityManager.signIn({
@@ -8,8 +8,9 @@ const authSession = await ArcGISIdentityManager.signIn({
   password: process.env.ARCGIS_PASSWORD,
 })
 
+// Get the portal information, we'll need this later
 const orgUrl = await getSelf({ authentication: authSession })
-console.log(orgUrl.urlKey)
+// console.log(orgUrl.urlKey)
 
 // create the developer credential
 const newKey = await createApiKey({
@@ -35,7 +36,7 @@ const newKey = await createApiKey({
   apiToken1ExpirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30), // 30 days
   authentication: authSession,
 })
-console.log(`new API Key developer credential created ${newKey.itemId}`)
+console.log(`\nNew API Key developer credential created ${newKey.itemId}`)
 
 // move item into a folder
 const moved = await moveItem({
@@ -43,8 +44,9 @@ const moved = await moveItem({
   folderId: "56e18f1d314d477a89fc81fc43547abc",
   authentication: authSession,
 })
+
 console.log(`\nItem moved ${JSON.stringify(moved)}`)
 
 console.log(
-  `\nDeveloper credential created successfully\nView item\nhttps://${orgUrl.urlKey}.maps.arcgis.com/home/item.html?id=${newKey.itemId}&token=${authSession.token}`
+  `\nView item\nhttps://${orgUrl.urlKey}.maps.arcgis.com/home/item.html?id=${newKey.itemId}`
 )
