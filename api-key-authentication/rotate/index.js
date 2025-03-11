@@ -51,7 +51,10 @@ const result = await updateApiKey({
  */
 const newApiKey = apiKeySlot === 2 ? result.accessToken1 : result.accessToken2
 currentConfig.apiKey = newApiKey
-writeFile("./app-config.json", JSON.stringify(currentConfig, null, 2))
+writeFile(
+  "./api-key-authentication/rotate/app-config.json",
+  JSON.stringify(currentConfig, null, 2)
+)
 console.log(`new key in slot ${apiKeySlot === 1 ? 2 : 1} created ${newApiKey}`)
 /**
  * Invalidate the old API key.
