@@ -24,13 +24,28 @@
         font-size: 14px;
         color: #323232;
       }
+
+      header {
+        margin: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
-    <header><h1>MapLibre GL JS - API Key authentication</h1></header>
+    <header>
+      <h1>MapLibre GL JS - API Key authentication</h1>
+      <a
+        href="https://markdevplatform.maps.arcgis.com/home/item.html?id=9c2e649187d9409aaf1eb45c341c5e30"
+        target="_blank"
+        >Developer credential</a
+      >
+    </header>
     <div id="map"></div>
 
     <script>
+      //https://markdevplatform.maps.arcgis.com/home/item.html?id=9c2e649187d9409aaf1eb45c341c5e30
       const apiKey = maplibre_key
       const basemapEnum = "arcgis/community"
       const map = new maplibregl.Map({

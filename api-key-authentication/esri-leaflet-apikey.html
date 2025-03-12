@@ -5,7 +5,7 @@
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
-    <title>Esri Leaflet Tutorials: Add a feature layer</title>
+    <title>Esri leaflet - API Key authentication</title>
 
     <!-- Load Leaflet from CDN -->
     <link
@@ -34,15 +34,29 @@
         font-size: 14px;
         color: #323232;
       }
+      header {
+        margin: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     </style>
   </head>
 
   <body>
-    <header><h1>Esri leaflet - API Key authentication</h1></header>
+    <header>
+      <h1>Esri leaflet - API Key authentication</h1>
+      <a
+        href="https://markdevplatform.maps.arcgis.com/home/item.html?id=4262e74e64dd4717814b5c446355e323"
+        target="_blank"
+        >Developer credential</a
+      >
+    </header>
     <div id="map"></div>
 
     <script>
-      const apiKey = leaflet_key
+      // https://markdevplatform.maps.arcgis.com/home/item.html?id=4262e74e64dd4717814b5c446355e323
+      const apiKey = basic_key
 
       const parcelsURL =
         "https://services1.arcgis.com/uIpesQSJUDNeF08O/arcgis/rest/services/santa_monica_test/FeatureServer/0"

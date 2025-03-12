@@ -16,13 +16,20 @@
         height: 100%;
         width: 100%;
       }
+
+      header{
+        margin:24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     </style>
     <script src="env.js"></script>
     <link
       rel="stylesheet"
-      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+      href="https://js.arcgis.com/4.32/esri/themes/light/main.css"
     />
-    <script src="https://js.arcgis.com/4.29/"></script>
+    <script src="https://js.arcgis.com/4.32/"></script>
 
     <script>
       require([
@@ -50,8 +57,9 @@
         SAParams,
         FeatureSet
       ) => {
-        esriConfig.apiKey =  geocoding_routing_key 
-        // esriConfig.apiKey = geocoding_key
+        
+        esriConfig.apiKey = geocoding_key
+        // esriConfig.apiKey =  geocoding_routing_key 
            
         const parcels = new FeatureLayer({
           portalItem: {
@@ -139,6 +147,7 @@
         }
 
         view.when(() => {
+
           const search = new Search({ view })
           view.ui.add(search, { position: "top-right" })
 
@@ -156,6 +165,8 @@
               view.graphics.removeAll()
             }
           })
+
+          document.getElementById("chkBox").setAttribute("checked", true)
         })
       })
 
@@ -166,7 +177,14 @@
   <body>
     <header>
       <h1>Maps SDK for JavaScript - API Key authentication</h1>
-      <input id="chkBox" type="checkbox" checked>Popup</input>
+      
+      <div>
+        <input id="chkBox" name="chkBox" type="checkbox" checked></input>
+        <label for="chkBox">Enable Popup</label>
+      </div>
+
+      <a href="">Developer credential</a>
+        
     </header>
     <div id="viewDiv"></div>
   </body>

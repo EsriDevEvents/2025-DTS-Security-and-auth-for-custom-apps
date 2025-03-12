@@ -1,6 +1,6 @@
 import { createApiKey } from "@esri/arcgis-rest-developer-credentials"
 import { ArcGISIdentityManager } from "@esri/arcgis-rest-request"
-import { moveItem, getSelf, getItem } from "@esri/arcgis-rest-portal"
+import { moveItem, getSelf } from "@esri/arcgis-rest-portal"
 
 // log in
 const authSession = await ArcGISIdentityManager.signIn({
@@ -10,7 +10,6 @@ const authSession = await ArcGISIdentityManager.signIn({
 
 // Get the portal information, we'll need this later
 const orgUrl = await getSelf({ authentication: authSession })
-// console.log(orgUrl.urlKey)
 
 // create the developer credential
 const newKey = await createApiKey({
