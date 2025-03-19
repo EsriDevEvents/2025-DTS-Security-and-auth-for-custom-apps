@@ -27,6 +27,7 @@ const newKey = await createApiKey({
     "authentication",
   ],
   privileges: [
+    // https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges/#list-of-privileges
     "premium:user:networkanalysis",
     "premium:user:spatialanalysis",
     "premium:user:geocode",
